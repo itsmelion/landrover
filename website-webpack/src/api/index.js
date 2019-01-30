@@ -5,12 +5,12 @@
 
 export const getData = (cb) => {
   const vehicles = new XMLHttpRequest();
-  vehicles.open('GET', `${process.env.API}/api/vehicle`);
+  vehicles.open('GET', `${process.env.REACT_APP_API}/api/vehicle`);
 
   vehicles.onreadystatechange = function() {
     if(vehicles.readyState === 4) {
       if(vehicles.status === 200) {
-        cb(vehicles.responseText);
+        cb(JSON.parse(vehicles.response).vehicles);
       }
     }
   };

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { getData } from '../../api';
+import { getData } from 'api';
+import VehicleItem from 'components/VehicleItem/VehicleItem';
 
 export default class VehicleList extends Component {
-
 	state = { data: null };
 
 	componentDidMount() {
@@ -11,12 +11,14 @@ export default class VehicleList extends Component {
 
 	render() {
     const { data } = this.state;
-    console.log(data);
-
     if(!data) return (<h1>Loading...</h1>);
 
     return (
-      <h1>Hello Moto</h1>
+      <main>
+        <ul contain="">
+          {data.map(vehicle => <VehicleItem vehicle={vehicle} />)}
+        </ul>
+      </main>
     );
 	}
 }
