@@ -30,8 +30,8 @@
     border: 0.5pt solid #eeeeee;
 
     .name {
-      border-top: 2pt solid currentColor;
-      border-bottom: 2pt solid currentColor;
+      border-top: 1pt solid currentColor;
+      border-bottom: 1pt solid currentColor;
       text-transform: uppercase;
 
       @media #{$mobile} {
@@ -43,6 +43,7 @@
     p {
       font-size: .9rem;
       color: $black5;
+      text-align: center;
 
       @media #{$mobile} {
         text-align: left;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { keyBy } from 'lodash';
 import { getData, getDetails } from 'api';
 import VehicleItem from 'components/VehicleItem/VehicleItem';
+import Loading from 'components/Loading/Loading';
 
 export default class VehicleList extends Component {
 	state = { data: null };
@@ -11,7 +12,7 @@ export default class VehicleList extends Component {
   }
 
   fetchCarData() {
-    getData()
+    return getData()
       .then(async (response) => {
         let cars = await Promise.all(response.map(item => getDetails(item.id)));
         cars = keyBy(cars, 'id');
@@ -25,17 +26,17 @@ export default class VehicleList extends Component {
 
         return response;
       })
-      .then(data => this.setState({ data }));
-
+      .then(data => this.setState({ data }))
+      .catch(e => new Error(e));
   }
 
 	render() {
     const { data } = this.state;
-    if(!data) return (<h1>Loading...</h1>);
+    if(!data) return Loading;
 
     return (
       <main>
-        <ul className="contain row VehicleList" align="center" mobile-align="start start">
+        <ul className="contain row VehicleList" align="start" mobile-align="start start">
           {data.map(vehicle => <VehicleItem key={vehicle.id} vehicle={vehicle} />)}
         </ul>
       </main>

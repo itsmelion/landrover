@@ -1,0 +1,50 @@
+@import '~flamework/src/vars';
+@import 'vars.scss';
+
+#VehicleDetails {
+
+  @media #{$mobile} {
+    padding: 0;
+  }
+
+  header {
+    flex: none;
+
+    @media #{$tablet} {
+      flex: 0 0 50%;
+    }
+
+    @media #{$mobile} {
+      flex: none;
+      margin-bottom: 0;
+    }
+  }
+
+  section {
+    background: white;
+    flex: auto;
+
+    @media #{$tablet} {
+      flex: 0 0 50%;
+    }
+
+    @media #{$mobile} {
+      flex: 0 0 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+
+    tr:nth-of-type(odd) {
+      background-color: #f5f5f5;
+    }
+
+    td {
+      padding: .2rem .5rem;
+      border: 0.5pt solid #e0e0e0;
+    }
+  }
+}
