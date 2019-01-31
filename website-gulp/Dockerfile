@@ -12,12 +12,10 @@ ENV NODE_ENV $NODE_ENV
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
-COPY package*.json /usr/src/app
+COPY package*.json yarn.lock /usr/src/app/
 
 RUN yarn cache clean && \
-yarn install
-# If you are building your code for production
-# RUN npm install --only=production
+yarn install --silent
 
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 

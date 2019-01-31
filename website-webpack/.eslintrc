@@ -3,11 +3,10 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "standard",
     "airbnb",
     "react-app"
   ],
-  "plugins": ["standard", "import", "react"],
+  "plugins": ["import", "react"],
   "settings": { "import/resolver": { "node": { "paths": ["src/"] } } },
   "env": {
     "es6": true,
@@ -23,6 +22,7 @@
     }
   },
   "rules": {
+    "no-undef":"off",
     "comma-dangle": ["warn"],
     "import/no-named-as-default-member": 0,
     "react/jsx-filename-extension": 0,
@@ -50,11 +50,6 @@
         "asyncArrow": "always"
       }
     ],
-
-    "standard/object-curly-even-spacing": ["error", "either"],
-    "standard/array-bracket-even-spacing": ["error", "either"],
-    "standard/computed-property-even-spacing": ["error", "even"],
-    "standard/no-callback-literal": ["error", ["cb", "callback"]],
 
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error"

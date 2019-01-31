@@ -4,7 +4,7 @@ exports.list = (req, res) => {
 }
 
 exports.details = ({ params }, res) => {
-  const vehicle = require('./server_api/vehicle_'+ params.id +'.js');
+  const vehicle = require('../sample_data/vehicle_'+ params.id +'.js');
   return res.json(vehicle);
 }
 

@@ -1,0 +1,8 @@
+$bg-colour: #efefef;
+
+// Breakpoints
+$mobile-breakpoint:   38rem; // ~780px
+$tablet-breakpoint:   56rem;
+$desktop-breakpoint:  $tablet-breakpoint + 0.01;
+$mobile:  "screen and (max-width: #{$mobile-breakpoint})";
+$tablet:  "screen and (max-width: #{$tablet-breakpoint})";

@@ -1,5 +1,6 @@
-$bg-colour: #ccc;
+@import 'vars';
+@import '~flamework';
 
 body {
-	background-color: $bg-colour;
+  background-color: $bg-colour;
 }
